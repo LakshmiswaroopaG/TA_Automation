@@ -124,6 +124,3 @@ async def convert_csv_to_xlsx(request: FileConversionRequest):
         return JSONResponse(content={"message": f"Conversion completed in {end_time - start_time:.2f} seconds"}, status_code=200)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
