@@ -9,8 +9,18 @@ from fastapi.responses import JSONResponse
 import uvicorn
 import requests
 from urllib.parse import quote
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # SharePoint configuration
 tenant_id = "48ad28ed-b094-4a7f-b297-482a8c33ccb4"
