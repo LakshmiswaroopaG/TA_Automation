@@ -47,10 +47,10 @@ def get_access_token():
 def download_file_from_sharepoint(folder: str, file_name: str) -> bytes:
     try:
         access_token = get_access_token()
-        encoded_folder = quote(folder)
-        encoded_file_name = quote(file_name)
+        # encoded_folder = quote(folder)
+        # encoded_file_name = quote(file_name)
         # Correct URL format for SharePoint REST API
-        file_url = f"{site_url}/_api/web/GetFolderByServerRelativeUrl('SFTP TA/Server Files/manual csv to excel')/Files('Process Report.csv')/$value"
+        file_url = f"{site_url}/_api/web/GetFolderByServerRelativeUrl('{folder}')/Files('{file_name}')/$value"
         
         print(f"Attempting to download from URL: {file_url}")  # Debugging line
         
@@ -65,7 +65,7 @@ def download_file_from_sharepoint(folder: str, file_name: str) -> bytes:
 def upload_file_to_sharepoint(folder: str, file_name: str, file_content: bytes):
     try:
         access_token = get_access_token()
-        upload_url = f"{site_url}/_api/web/GetFolderByServerRelativeUrl('SFTP TA/Server Files/manual csv to excel')/Files/add(url='Example.xlsx', overwrite=true)"
+        upload_url = f"{site_url}/_api/web/GetFolderByServerRelativeUrl('{folder}')/Files/add(url='{file_name}', overwrite=true)"
         headers = {
             "Authorization": f"Bearer {access_token}",
             "Content-Type": "application/octet-stream"
