@@ -24,10 +24,10 @@ app.add_middleware(
 
 # SharePoint configuration
 tenant_id = "48ad28ed-b094-4a7f-b297-482a8c33ccb4"
-client_id= "c1746570-9dc1-49b3-80f0-623afb3b2a38@48ad28ed-b094-4a7f-b297-482a8c33ccb4"
-client_secret = "OM2+9oAV8pDrJpxIyh4lX98ytSdsKkVQcOZp1Uo3V/M="
+client_id= "72ff45f5-09de-4470-b09a-979aa219bc0e@48ad28ed-b094-4a7f-b297-482a8c33ccb4"
+client_secret = "oVS+U1ej1yEAuxYduHdxMwgVMxvFkfYXNrRYhODDjQQ="
 resource = '00000003-0000-0ff1-ce00-000000000000/aeries.sharepoint.com@48ad28ed-b094-4a7f-b297-482a8c33ccb4'
-site_url="https://aeries.sharepoint.com/sites/PoA"
+site_url="https://aeries.sharepoint.com/sites/TAAutomation"
 
 def get_access_token():
     url = f"https://accounts.accesscontrol.windows.net/{tenant_id}/tokens/OAuth/2"
